@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message | Mini Messageboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <ul>
+        <li>
+            <p class="user"><%= message.user %> - <%= message.added.toLocaleDateString() %></p>
+            <p class="text"><%= message.text %></p>
+        </li>
+    </ul>
+</body>
+</html>

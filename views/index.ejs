@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2><%= title %></h2>
+    <form action="/new" method="GET">
+        <button>New Message</button>
+    </form>
+    <ul>
+        <% messages.forEach((message, index) => { %>
+            <li>
+                <p class="user"><%= message.user %> - <%= message.added.toLocaleDateString() %></p>
+                <p class="text"><%= message.text %></p>
+                <form action="/message" method="GET">
+                    <input type="hidden" name="id" value="<%= index %>">
+                    <button type="submit">Open</button>
+                </form>
+                
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
