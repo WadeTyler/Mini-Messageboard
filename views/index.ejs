@@ -14,10 +14,10 @@
     <ul>
         <% messages.forEach((message, index) => { %>
             <li>
-                <p class="user"><%= message.user %> - <%= message.added.toLocaleDateString() %></p>
-                <p class="text"><%= message.text %></p>
+                <p class="user"><%= message.username %> - <%= message.date %></p>
+                <p class="text"><%= message.message %></p>
                 <form action="/message" method="GET">
-                    <input type="hidden" name="id" value="<%= index %>">
+                    <input type="hidden" name="id" value="<%= message.messageid %>">
                     <button type="submit">Open</button>
                 </form>
                 
